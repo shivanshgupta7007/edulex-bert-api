@@ -1,5 +1,7 @@
 # EduLex BERT API
 
+**Live API:** https://edulex-bert-api.onrender.com - try `GET /model-info`, `POST /detect-complex-words` with `{"text": "..."}`.
+
 The [EduLex](https://github.com/shivanshgupta7007) dyslexia-aware learning assistant's fine-tuned BERT token classifier - served as a production-style HTTP API with Docker and CI. Flags phonologically complex and long-form words in text, and simplifies them, so reading material can adapt to the learner.
 
 ## What it demonstrates
