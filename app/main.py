@@ -9,6 +9,7 @@ GET  /health                liveness
 from __future__ import annotations
 
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 
 from .model import load_detector
 from .schemas import (DetectRequest, DetectResponse, DetectionOut,
@@ -35,6 +36,11 @@ SIMPLE_SYNONYMS = {
 }
 
 app = FastAPI(title="EduLex BERT API", version="1.0.0")
+
+
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse(url="/docs")
 _detector = None
 
 
